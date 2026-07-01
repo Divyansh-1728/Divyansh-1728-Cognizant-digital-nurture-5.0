@@ -1,6 +1,3 @@
-public class MyService {
-    
-}
 package com.cognizant.Exercise1.MockingandStubbing;
 
 public class MyService {

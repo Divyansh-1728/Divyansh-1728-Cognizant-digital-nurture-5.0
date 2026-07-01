@@ -1,6 +1,3 @@
-public class Exercise1MockingandStubbingApplication {
-    
-}
 package com.cognizant.Exercise1.MockingandStubbing;
 
 import org.springframework.boot.SpringApplication;

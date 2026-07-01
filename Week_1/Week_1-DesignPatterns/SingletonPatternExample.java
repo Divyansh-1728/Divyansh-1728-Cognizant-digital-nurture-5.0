@@ -2,7 +2,9 @@ class Logger {
 
     private static Logger obj;
 
+    
     private Logger() {
+        System.out.println("Logger Instance Created");
     }
 
     public static Logger getInstance() {
@@ -12,8 +14,8 @@ class Logger {
         return obj;
     }
 
-    public void display(String msg) {
-        System.out.println(msg);
+    public void log(String msg) {
+        System.out.println("LOG: " + msg);
     }
 }
 
@@ -21,16 +23,24 @@ public class SingletonPatternExample {
 
     public static void main(String[] args) {
 
-        Logger l1 = Logger.getInstance();
-        Logger l2 = Logger.getInstance();
+        Logger logger1 = Logger.getInstance();
+        Logger logger2 = Logger.getInstance();
+        Logger logger3 = Logger.getInstance();
 
-        l1.display("First Log Message");
-        l2.display("Second Log Message");
+        logger1.log("Application Started");
+        logger2.log("User Logged In");
+        logger3.log("Application Closed");
 
-        if (l1 == l2) {
-            System.out.println("Only one object created");
+        System.out.println();
+
+        System.out.println("logger1 HashCode : " + logger1.hashCode());
+        System.out.println("logger2 HashCode : " + logger2.hashCode());
+        System.out.println("logger3 HashCode : " + logger3.hashCode());
+
+        if (logger1 == logger2 && logger2 == logger3) {
+            System.out.println("\nOnly one Logger instance exists.");
         } else {
-            System.out.println("Different objects created");
+            System.out.println("\nMultiple Logger instances created.");
         }
     }
 }
